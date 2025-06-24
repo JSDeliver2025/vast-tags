@@ -1,8 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <VAST version="4.2">
   <Ad id="12345">
     <InLine>
-      <AdSystem version="1.0">Sample Ad Server</AdSystem>
+      <AdSystem>Sample Ad Server</AdSystem>
       <AdTitle>Sample Video Ad</AdTitle>
+      <Impression><![CDATA[https://example.com/impression-tracker]]></Impression>
       <Creatives>
         <Creative sequence="1" id="1">
           <Linear>
