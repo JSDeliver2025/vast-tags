@@ -1,21 +1,20 @@
-<VAST version="3.0">
-  <Ad id="001">
+<VAST version="4.2">
+  <Ad id="12345">
     <InLine>
-      <AdSystem>Custom</AdSystem>
-      <AdTitle>My Video Ad</AdTitle>
-      <Impression><![CDATA[https://yourdomain.com/impression-tracker]]></Impression>
+      <AdSystem version="1.0">Sample Ad Server</AdSystem>
+      <AdTitle>Sample Video Ad</AdTitle>
       <Creatives>
         <Creative sequence="1" id="1">
-          <Linear skipoffset="00:00:05">
+          <Linear>
             <Duration>00:00:30</Duration>
+            <VideoClicks>
+              <ClickThrough><![CDATA[https://example.com/landingpage]]></ClickThrough>
+            </VideoClicks>
             <MediaFiles>
-              <MediaFile delivery="progressive" type="video/mp4" width="640" height="360">
+              <MediaFile delivery="progressive" type="video/mp4" width="1280" height="720" bitrate="1500" scalable="true" maintainAspectRatio="true">
                 <![CDATA[https://res.cloudinary.com/daq9fuoya/video/upload/v1750741274/samples/dance-2.mp4]]>
               </MediaFile>
             </MediaFiles>
-            <VideoClicks>
-              <ClickThrough><![CDATA[https://yourlandingpage.com]]></ClickThrough>
-            </VideoClicks>
           </Linear>
         </Creative>
       </Creatives>
