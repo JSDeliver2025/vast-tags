@@ -1,21 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<VAST version="4.2">
-  <Ad id="12345">
+<VAST version="4.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Ad id="interactive-ad">
     <InLine>
-      <AdSystem>Sample Ad Server</AdSystem>
-      <AdTitle>Sample Video Ad</AdTitle>
-      <Impression><![CDATA[https://example.com/impression-tracker]]></Impression>
+      <AdSystem version="1.0">CustomAdServer</AdSystem>
+      <AdTitle>Interactive Video Ad</AdTitle>
+
+      <!-- Impression tracking -->
+      <Impression><![CDATA[https://tracker.example.com/impression]]></Impression>
+
+      <!-- Viewability & Quartile Tracking -->
       <Creatives>
-        <Creative sequence="1" id="1">
-          <Linear>
+        <Creative sequence="1" id="123">
+          <Linear skipoffset="00:00:05">
             <Duration>00:00:19</Duration>
+            
+            <TrackingEvents>
+              <Tracking event="start"><![CDATA[https://tracker.example.com/start]]></Tracking>
+              <Tracking event="firstQuartile"><![CDATA[https://tracker.example.com/q1]]></Tracking>
+              <Tracking event="midpoint"><![CDATA[https://tracker.example.com/q2]]></Tracking>
+              <Tracking event="thirdQuartile"><![CDATA[https://tracker.example.com/q3]]></Tracking>
+              <Tracking event="complete"><![CDATA[https://tracker.example.com/complete]]></Tracking>
+            </TrackingEvents>
+
+            <!-- Click-through -->
             <VideoClicks>
-              <ClickThrough><![CDATA[https://example.com/landingpage]]></ClickThrough>
+              <ClickThrough><![CDATA[https://your-landing-page.com]]></ClickThrough>
+              <ClickTracking><![CDATA[https://tracker.example.com/click]]></ClickTracking>
             </VideoClicks>
+
+            <!-- Video file (could be an interactive wrapper like VPAID or HTML) -->
             <MediaFiles>
-              <MediaFile delivery="progressive" type="video/mp4" width="1280" height="720" bitrate="1500" scalable="true" maintainAspectRatio="true">
+              <!-- Basic MP4 (non-interactive) -->
+              <MediaFile delivery="progressive" type="video/mp4" width="640" height="360">
                 <![CDATA[https://res.cloudinary.com/daq9fuoya/video/upload/v1750741274/samples/dance-2.mp4]]>
               </MediaFile>
+
+              <!-- Optional: Interactive HTML creative -->
+              <!--
+              <InteractiveCreativeFile type="application/javascript" apiFramework="omid">
+                <![CDATA[https://yourdomain.com/interactive-ad.html]]>
+              </InteractiveCreativeFile>
+              -->
             </MediaFiles>
           </Linear>
         </Creative>
