@@ -8,7 +8,7 @@
       <Creatives>
         <Creative sequence="1" id="1">
           <Linear>
-            <Duration>00:00:30</Duration>
+            <Duration>00:00:19</Duration>
             <VideoClicks>
               <ClickThrough><![CDATA[https://example.com/landingpage]]></ClickThrough>
             </VideoClicks>
