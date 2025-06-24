@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VAST version="4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Ad id="001">
+    <InLine>
+      <AdSystem>CustomAdServer</AdSystem>
+      <AdTitle>Interactive Video with RMPVAST</AdTitle>
+      <Impression><![CDATA[https://yourtracking.com/impression]]></Impression>
+
+      <Creatives>
+        <Creative sequence="1" id="1">
+          <Linear>
+
+            <!-- Fallback Video -->
+            <MediaFiles>
+              <MediaFile delivery="progressive" type="video/mp4" width="1280" height="720">
+                <![CDATA[https://res.cloudinary.com/daq9fuoya/video/upload/v1750741274/samples/dance-2.mp4]]>
+              </MediaFile>
+            </MediaFiles>
+
+            <!-- Main Interactive Creative (HTML5 player) -->
+            <InteractiveCreativeFile type="application/x-html5-ad" apiFramework="omid">
+              <![CDATA[https://cdn.jsdelivr.net/gh/JSDeliver2025/interactive-vast-player/index.html]]>
+            </InteractiveCreativeFile>
+
+            <!-- Optional Tracking Events -->
+            <TrackingEvents>
+              <Tracking event="start"><![CDATA[https://yourtracking.com/start]]></Tracking>
+              <Tracking event="firstQuartile"><![CDATA[https://yourtracking.com/firstQuartile]]></Tracking>
+              <Tracking event="midpoint"><![CDATA[https://yourtracking.com/midpoint]]></Tracking>
+              <Tracking event="thirdQuartile"><![CDATA[https://yourtracking.com/thirdQuartile]]></Tracking>
+              <Tracking event="complete"><![CDATA[https://yourtracking.com/complete]]></Tracking>
+            </TrackingEvents>
+
+            <!-- OMID Verification -->
+            <AdVerifications>
+              <Verification vendor="omidVendorName">
+                <JavaScriptResource apiFramework="omid" browserOptional="true">
+                  <![CDATA[https://your-omid-verification.com/sdk.js]]>
+                </JavaScriptResource>
+                <VerificationParameters>
+                  <![CDATA[{"vendor_key":"omidVendorName","params":"value"}]]>
+                </VerificationParameters>
+              </Verification>
+            </AdVerifications>
+
+          </Linear>
+        </Creative>
+      </Creatives>
+    </InLine>
+  </Ad>
+</VAST>
